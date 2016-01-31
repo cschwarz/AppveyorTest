@@ -11,7 +11,4 @@
     <copyright>Copyright 2015</copyright>
     <tags>AppveyorTest</tags>
   </metadata>
-  <files>
-    <file src="bin\Release\AppveyorTest.dll" target="lib"/>
-  </files>
 </package>
