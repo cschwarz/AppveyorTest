@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>AppveyorTest</id>
+    <version>$version$</version>
+    <title>AppveyorTest</title>
+    <authors>Christian Schwarz</authors>
+    <owners>Christian Schwarz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AppveyorTest</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>AppveyorTest</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\AppveyorTest.dll" target="lib"/>
+  </files>
+</package>
