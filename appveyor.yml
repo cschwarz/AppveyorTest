@@ -1,4 +1,3 @@
-version: 0.0.1.{build}
 configuration: Release
 install:
 - cmd: choco install gitversion.portable -pre -y
