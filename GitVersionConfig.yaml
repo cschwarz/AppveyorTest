@@ -1,4 +1,4 @@
 assembly-versioning-scheme: Major
-assembly-informational-format: {NuGetVersion}
+assembly-informational-format: '{NuGetVersion}'
 mode: ContinuousDelivery
 branches: {}
