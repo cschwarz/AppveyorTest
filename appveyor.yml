@@ -1,0 +1,19 @@
+version: 0.0.1.{build}
+configuration: Release
+install:
+- cmd: choco install gitversion.portable -pre -y
+before_build:
+- ps: gitversion /l console /output buildserver /updateAssemblyInfo
+build:
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  verbosity: minimal
+deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/appveyortest-ci/api/v3/index.json
+  api_key:
+    secure: 1z5/yKOcTtb7iqitTKq4jfUED7+pQyJkHz5TryyO4hSAvjrKRThI5e0MRVBkxxzx
+  symbol_server: https://www.myget.org/F/appveyortest-ci/api/v2/package
+  on:
+    branch: develop
