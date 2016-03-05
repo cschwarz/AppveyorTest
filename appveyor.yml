@@ -1,8 +1,12 @@
 configuration: Release
-install:
-- cmd: choco install gitversion.portable -pre -y
 before_build:
-- ps: gitversion /l console /output buildserver /updateAssemblyInfo
+- ps: >- 
+	$versionFile = "$env:APPVEYOR_BUILD_FOLDER\version.txt"
+	$version = [IO.File]::ReadAllText($versionFile)
+	$version = "$version.$env:APPVEYOR_BUILD_NUMBER"
+	
+	Add-AppveyorMessage -Message "Version: $version"
+	Update-AppveyorBuild -Version $version
 build:
   publish_nuget: true
   publish_nuget_symbols: true
