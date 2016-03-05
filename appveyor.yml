@@ -2,14 +2,9 @@ configuration: Release
 before_build:
 - ps: >-
     $versionFile = "$env:APPVEYOR_BUILD_FOLDER\version.txt"
-
     $version = [IO.File]::ReadAllText($versionFile)
-
     $version = "$version.$env:APPVEYOR_BUILD_NUMBER"
-
-
     Add-AppveyorMessage -Message "Version: $version"
-
     Update-AppveyorBuild -Version $version
 build:
   publish_nuget: true
