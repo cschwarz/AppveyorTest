@@ -19,6 +19,7 @@ deploy:
     secure: 1z5/yKOcTtb7iqitTKq4jfUED7+pQyJkHz5TryyO4hSAvjrKRThI5e0MRVBkxxzx
   symbol_server: https://www.myget.org/F/appveyortest/api/v2/package
   on:
+    branch: master
     appveyor_repo_tag: true
 - provider: NuGet
   name: development
@@ -28,3 +29,12 @@ deploy:
   symbol_server: https://www.myget.org/F/appveyortest-ci/api/v2/package
   on:
     branch: master
+- provider: NuGet
+  name: development tag
+  server: https://www.myget.org/F/appveyortest-ci/api/v2/package
+  api_key:
+    secure: 1z5/yKOcTtb7iqitTKq4jfUED7+pQyJkHz5TryyO4hSAvjrKRThI5e0MRVBkxxzx
+  symbol_server: https://www.myget.org/F/appveyortest-ci/api/v2/package
+  on:
+    branch: master
+    appveyor_repo_tag: true
